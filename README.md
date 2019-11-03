@@ -15,7 +15,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner in the interactive watch mode with coverage.<br />
 
+<<<<<<< HEAD
 ### `npm lint`
+=======
+### `npm run lint`
+>>>>>>> 1cd176edf0e8e132bdc96466f6a3a9505f465825
 
 Launches the lint runner eslint.<br />
 
