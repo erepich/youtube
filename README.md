@@ -1,5 +1,5 @@
 ## YouTube Video Search 
-* This is a singlepage react app that connects to youtube api to search and returns image, title description and comments.
+* This is a singlepage React app that connects to YouTube api to search and returns image, title description and comments.
 * The app allows for sorting by clicking on the relevance, rating and date buttons.
 
 ## Getting Started
@@ -13,7 +13,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode with coverage<br />
+Launches the test runner in the interactive watch mode with coverage.<br />
+
+### `npm lint`
+
+Launches the lint runner eslint.<br />
 
 ### `npm run build`
 
@@ -22,10 +26,10 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Deployment
 ### `serve -s build` 
-builds file is in /build and can be run after installing serve
+Build file is in /build and can be run after installing serve.
 
 ## Notes
-* Originally bootstrapped with  [Create React App](https://github.com/facebook/create-react-app).
+* Originally bootstrapped with  [Create React App](https://github.com/facebook/create-react-app)
 * Semantic-ui made quick work of some simple format styles
 * Used linting based on AirBnb, eslint:recommended and plugin:react/recommended
 * Used .env for youtube api key storing and normally this would not be in github 
