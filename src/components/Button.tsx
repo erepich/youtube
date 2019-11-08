@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement }  from 'react';
 import PropTypes from 'prop-types';
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   datatestid: string
 }
 
-const Button = (props: Props): any => {
+const Button = (props: Props): ReactElement<any> => {
   const { onClickButton, children, datatestid } = props;
 
   return (

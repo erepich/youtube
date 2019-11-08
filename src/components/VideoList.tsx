@@ -1,12 +1,12 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React, { ReactElement }  from 'react';
 import PropTypes from 'prop-types';
-import VideoItem from './VideoItem'; // eslint-disable-line no-unused-vars
+import VideoItem from './VideoItem';
 
 interface Props { 
   allVideos: Array<VideoProps>;
 }
 
-const VideoList = (props: Props ): any => {
+const VideoList = (props: Props ): ReactElement<any> => {
 
   const renderItems = props.allVideos.map((video: VideoProps) => <VideoItem key={video.id.videoId} video={video} />);
 

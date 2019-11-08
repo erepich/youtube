@@ -1,12 +1,12 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React, { ReactElement }  from 'react';
 import PropTypes from 'prop-types';
-import Comments from './Comments'; // eslint-disable-line no-unused-vars
+import Comments from './Comments';
 
 interface Props {
   video: VideoProps
 }
 
-const VideoItem= (props: Props): any => {
+const VideoItem= (props: Props): ReactElement<any> => {
   const { description, thumbnails, title } = props.video.snippet;
   const { videoId } = props.video.id;
   const LINK = `https://www.youtube.com/watch?v=${videoId}`;
