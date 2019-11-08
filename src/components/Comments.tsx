@@ -2,10 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import youtube from '../apis/youtube';
 
-class Comments extends React.Component {
-  state = {
-    commentCount: 0,
-  }
+interface Props {
+  videoId: string;
+}
+
+const initialState = {
+  commentCount: 0,
+}
+
+type State = Readonly<typeof initialState>;
+
+class Comments extends React.Component<any, State, Props> {
+  readonly state: State = initialState;
+
+  static propTypes: { videoId: PropTypes.Requireable<string>; };
 
   async componentDidMount() {
     try {
@@ -35,7 +45,3 @@ class Comments extends React.Component {
 }
 
 export default Comments;
-
-Comments.propTypes = {
-  videoId: PropTypes.string,
-};

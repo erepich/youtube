@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = (props) => {
+interface Props {
+  onClickButton: CallableFunction,  
+  children: string, 
+  datatestid: string
+}
+
+const Button = (props: Props): any => {
   const { onClickButton, children, datatestid } = props;
 
   return (

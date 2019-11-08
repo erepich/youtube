@@ -2,23 +2,27 @@ import React from 'react';
 import youtube from '../apis/youtube';
 import SearchBar from './SearchBar';
 import Sort from './Sort';
-import YouTubeList from './VideoList';
+import VideoList from './VideoList';
 
-class App extends React.Component {
-  state = {
-    youtubeVideos: [],
-    sort: 'relevance',
-    loading: false,
-    searched: '',
-    loadingError: ''
-  }
+const initialState = {
+  youtubeVideos: [],
+  sort: 'relevance',
+  loading: false,
+  searched: '',
+  loadingError: ''
+}
 
-  onClickSort = (sort) => {
+type State = Readonly<typeof initialState>;
+
+class App extends React.Component<any, State> {
+  readonly state: State = initialState;
+
+  onClickSort = (sort: string): void => {
     this.setState({ sort });
     this.onSubmit(this.state.searched);
   }
 
-  onSubmit = async (termFromSearchBar) => {
+  onSubmit = async (termFromSearchBar: string): Promise<void> => {
     this.setState({
       searched: termFromSearchBar,
       loading: true,
@@ -50,7 +54,7 @@ class App extends React.Component {
 
   render() {
     const { loadingError, youtubeVideos } = this.state;
-    const queryResults = this.state.youtubeVideos.length > 0 ? <YouTubeList allVideos={youtubeVideos} />
+    const queryResults = this.state.youtubeVideos.length > 0 ? <VideoList allVideos={youtubeVideos} />
       : <div>{loadingError}</div>;
 
     const loading = this.state.loading ? <h2>Loading...Please wait...</h2> : <div></div>;

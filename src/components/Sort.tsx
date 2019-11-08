@@ -2,10 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
 
-class Sort extends React.Component {
-  onClickSort = (sortby) => {
+interface Props {
+  sort: CallableFunction;
+}
+
+class Sort extends React.Component<Props> {
+  onClickSort = (sortby: string) => {
     this.props.sort(sortby);
   }
+  static propTypes: { sort: PropTypes.Validator<(...args: any[]) => any>; };
 
   render() {
     return (
@@ -28,7 +33,3 @@ class Sort extends React.Component {
 }
 
 export default Sort;
-
-Sort.propTypes = {
-  sort: PropTypes.func.isRequired,
-};

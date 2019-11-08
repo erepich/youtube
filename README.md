@@ -2,6 +2,11 @@
 * This is a singlepage React app that connects to YouTube api to search and returns image, title description and comments.
 * The app allows for sorting by clicking on the relevance, rating and date buttons.
 
+## Notes
+
+* You will need to update the .env file with your own API key. REACT_APP_API_KEY_YOUTUBE="YOUR_API_KEY"
+* Added typescript checking.
+
 ## Getting Started
 
 *  In the project directory, you can run:

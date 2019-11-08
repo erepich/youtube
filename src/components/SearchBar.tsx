@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { FormEvent, ChangeEvent } from 'react';
 import PropTypes from 'prop-types';
 
-class SearchBar extends React.Component {
-  state = { term: '' };
+interface Props {
+  onSubmit: CallableFunction;
+}
 
-  onFormSubmit = (event) => {
-    const { onSubmit } = this.props;
+const initialState = {
+  term: '' 
+}
+
+type State = Readonly<typeof initialState>;
+
+class SearchBar extends React.Component<any, State, Props> {
+  readonly state: State = initialState;
+
+  onFormSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
+    const { onSubmit } = this.props;
+    
     onSubmit(this.state.term);
   }
+  static propTypes: { onSubmit: PropTypes.Validator<(...args: any[]) => any>; };
 
   render() {
     return (
@@ -20,7 +32,7 @@ class SearchBar extends React.Component {
               data-testid="search-text"
               type="text"
               value={this.state.term}
-              onChange={ (e) => this.setState({ term: e.target.value })
+              onChange={ (e: ChangeEvent<HTMLInputElement>) => this.setState({ term: e.target.value })
               }
             />
           </div>
